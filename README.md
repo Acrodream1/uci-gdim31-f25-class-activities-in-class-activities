@@ -1,6 +1,7 @@
 # in-class-activities
 ## Devlogs
 ### W1
+#### In-Class Activity
 "Hello World!"
 
 1. After removing the camera as one of the Cat's (Gameobject) children, the camera no longer is a "dependent" on the Cat. This means that when the cat moves, the camera will not move accordingly with the cat. This is why when running the game without the camera as a child of the cat, the camera no longer follows the cat.
