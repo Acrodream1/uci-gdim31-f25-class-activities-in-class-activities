@@ -27,7 +27,7 @@
 1. Components are the body parts of a human vessel and the classes are its properties. The classes can define if the body part moves, it if has bones, if it has skin, and many more.
 
 ##### Devlog Question
-1. I think the reason why the balls get brighter the more they bounce because the BallW3 script changes the brightness of the ball based on its average speed. The ball's color is multiplied by the result of "GetColorMultiplier", which can return 1.5 instead of 1.0, making the balls brighter if they pass the speed threshold.
+1. I think the reason why the balls get brighter the more they bounce because the BallW3 script changes the brightness of the ball based on its average speed. The ball's color is multiplied by the result of "GetColorMultiplier", which can return 1.5 instead of 1.0, making the balls brighter if they pass the speed threshold. At a certain point, the speed of the ball with reach great speeds and will always pass the ball's speed threshold, changing the ball's brightness.
 
 
 
