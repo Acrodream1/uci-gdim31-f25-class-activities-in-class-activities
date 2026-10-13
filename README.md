@@ -23,7 +23,7 @@
 3. The parameter of the DidPlayerHitBeat method should be declared as "float time". The return type of the method should be "bool".
 
 
-##### Components & Classes metaphor
+##### Components & Classes metaphor || Table 1
 1. Components are the body parts of a human vessel and the classes are its properties. The classes can define if the body part moves, it if has bones, if it has skin, and many more.
 
 ##### Devlog Question
