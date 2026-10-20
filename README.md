@@ -22,13 +22,18 @@
 2. The parameter of the SetLightDimness method should be declared as "float sanity". The return type of the method should be "void".
 3. The parameter of the DidPlayerHitBeat method should be declared as "float time". The return type of the method should be "bool".
 
-
 ##### Components & Classes metaphor || Table 1
 1. Components are the body parts of a human vessel and the classes are its properties. The classes can define if the body part moves, it if has bones, if it has skin, and many more.
 
 ##### Devlog Question
 1. I think the reason why the balls get brighter the more they bounce because the BallW3 script changes the brightness of the ball based on its average speed. The ball's color is multiplied by the result of "GetColorMultiplier", which can return 1.5 instead of 1.0, making the balls brighter if they pass the speed threshold. At a certain point, the speed of the ball with reach great speeds and will always pass the ball's speed threshold, changing the ball's brightness.
 
+### W4
+#### In-Class Activity
+
+##### Collision discussion || Table 1
+1. The solution I came up with was that the cat and the ball should have a rigidbody (since they should be affected by physics). I also decided that the ball and the goal should have a collision set with IsTrigger property on.
+2. At first, I couldn't properly collide and kick the ball. Then, I realized that the ball needs a rigidbody in order to simulate physics on the ball.
 
 
 

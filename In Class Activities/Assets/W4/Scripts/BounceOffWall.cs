@@ -8,7 +8,7 @@ public class BounceOffWall : MonoBehaviour
     // ------------------------------------------------------------------------
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.tag.Equals("Wall"))
+        if(other.gameObject.tag.Equals("ground"))
         {
             Vector3 meToCenter = (-transform.position).normalized;
             _rigidBody.AddForce(meToCenter * _bounceForce, ForceMode.Impulse);
