@@ -40,7 +40,7 @@
 
 ##### Deer Class Notes
 DeerW5: So when I was reading the directions for creating the deer class, what I thought was to make the deer move through its transform property. The deer class should inherit the MonoBehavior class so it can be attached as a component. Because the directions are asking for a changable value in the inspector, I will declare a variable using [SerializeField] to expose the variable. To make the deer move, I will declare a nav mesh agent, get the deer mesh on start using Start() and move the deer using SetDestination().
-1. The class needs a private variable that stores the game object and exposes the variable to the inspector with [SerializeField]. Another member variable is a private variable named "agent" that stores the Navigation Mesh Agent of the deer.
+1. The class needs a private variable that stores the target transform and exposes the variable to the inspector with [SerializeField]. Another member variable is a private variable named "agent" that stores the Navigation Mesh Agent of the deer.
 2. This class needs the method Start().
 3. The Start() method sets the agent variable to the navigation mesh and sets the destination of the deer using SetDestination();
 
