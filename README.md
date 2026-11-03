@@ -35,6 +35,19 @@
 1. The solution I came up with was that the cat and the ball should have a rigidbody (since they should be affected by physics). I also decided that the ball and the goal should have a collision set with IsTrigger property on.
 2. At first, I couldn't properly collide and kick the ball. Then, I realized that the ball needs a rigidbody in order to simulate physics on the ball.
 
+### W6
+#### In-Class Activity
+
+##### Deer Class Notes
+DeerW5: So when I was reading the directions for creating the deer class, what I thought was to make the deer move through its transform property. The deer class should inherit the MonoBehavior class so it can be attached as a component. Because the directions are asking for a changable value in the inspector, I will declare a variable using [SerializeField] to expose the variable. To make the deer move, I will declare a nav mesh agent, get the deer mesh on start using Start() and move the deer using SetDestination().
+1. The class needs a private variable that stores the game object and exposes the variable to the inspector with [SerializeField]. Another member variable is a private variable named "agent" that stores the Navigation Mesh Agent of the deer.
+2. This class needs the method Start().
+3. The Start() method sets the agent variable to the navigation mesh and sets the destination of the deer using SetDestination();
+
+*For activity purposes, Speed is not elaborated here*
+
+
+CatW5: I am most likely going to make the cat take in the input axis and using the transform, translate the cat's position.
 
 
 ## Open-Source Assets

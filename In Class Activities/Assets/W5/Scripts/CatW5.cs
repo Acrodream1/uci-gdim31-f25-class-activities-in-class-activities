@@ -1,3 +1,5 @@
+using System.Xml;
+using UnityEditor.UI;
 using UnityEngine;
 
 public class CatW5 : MonoBehaviour
@@ -17,7 +19,7 @@ public class CatW5 : MonoBehaviour
         //      the cat's movement.
         //
         // The Cat should move forwards and backwards with the W and S keys.
-        //
+        
         // Use the "static properties" listed under the Vector3 documentation:
         //  https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Vector3.html
         //
@@ -44,7 +46,32 @@ public class CatW5 : MonoBehaviour
         // MULTIPLY one of your vectors with a certain value to do this. >:)
 
         Vector3 translation = Vector3.zero;
+
+        if (Input.GetAxis("Vertical") > 0)
+        {
+            if (_flipWSControls)
+            {
+                translation += Vector3.back;
+            } else
+            {
+                translation += Vector3.forward;
+            }
+        } else if (Input.GetAxis("Vertical") < 0)
+        {
+            if (_flipWSControls)
+            {
+                translation += Vector3.forward;
+            }
+            else
+            {
+                translation += Vector3.back;
+            }
+        }
+
+        float transformation = translation.z * _moveSpeed * Time.deltaTime;
+        transform.Translate(0, 0, transformation);
         
+
 
 
         // STEP 1 & 2 ---------------------------------------------------------
@@ -60,5 +87,6 @@ public class CatW5 : MonoBehaviour
         {
             _animator.SetBool(_isWalkingName, false);
         }
+  
     }
 }
