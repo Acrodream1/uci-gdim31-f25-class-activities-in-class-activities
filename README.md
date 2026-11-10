@@ -49,6 +49,17 @@ DeerW5: So when I was reading the directions for creating the deer class, what I
 
 CatW5: I am most likely going to make the cat take in the input axis and using the transform, translate the cat's position.
 
+### W7
+#### In-Class Activity
+
+##### Class resource guide google document: https://docs.google.com/document/d/1_tBpKPam_XOvv1F1GfLHlH7EezarfYFHKBYlpzPdyPM/edit?tab=t.0
+
+##### BatW6 Documentation
+Before beginning to make the bat class, some things that I will make sure that the class will need an Update() function for animation. In the bat class, I am going to need a chase method and a stop method. To do the chase method, I am going to need the player's position so that it is possible to get the direction where the player is.
+
+1. Some member variables this class is going to need is a speed variable and a direction variable. The speed will determine how fast the bat moves and the direction variable will determine where the bat should travel.
+2. The methods that the bat class is going to need is the Start() method and the Update() method.
+3. The Start() method should initialize the bat chase and the Update() method should animate the bats.
 
 ## Open-Source Assets
 ### W1

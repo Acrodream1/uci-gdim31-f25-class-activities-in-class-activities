@@ -1,3 +1,6 @@
+using NUnit.Framework;
+using System;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,13 +15,18 @@ public class BatManager : MonoBehaviour
     // STEP 1 -----------------------------------------------------------------
     // Add a member variable named "_bats" that's an array of BatW6 Components.
     // In the Inspector, add ALL of the bats in the Scene.
-    
+
+    [SerializeField] private BatW6[] _bats;
+
+
     // STEP 1 -----------------------------------------------------------------
 
     // STEP 3 -----------------------------------------------------------------
     // Add a member variable named "_messages" that's an array of strings.
     // In the Inspector, add at least a few different messages for the bats to
     //      say when they reach the player.
+
+    [SerializeField] private string[] _messages;
     
     // STEP 3 -----------------------------------------------------------------
 
@@ -38,7 +46,7 @@ public class BatManager : MonoBehaviour
         // That means the bat at _bats[0] has a timer at _newTextTimers[0],
         //      the bat at _bats[1] has a timer at _newTextTimers[1],
         //      and so on.
-        // _newTextTimers = new [_bats.Length];
+        _newTextTimers = new float[_bats.Length];
         // STEP 6 -------------------------------------------------------------
     }
 
@@ -49,6 +57,10 @@ public class BatManager : MonoBehaviour
         // Loop through all of the entries in _newTextTimers, and increase each
         //      timer's value by the amount of time that passed this frame.
         
+        for (int i = 0; i < _newTextTimers.Length; i++)
+        {
+            _newTextTimers[i] += Time.deltaTime;
+        }
 
         // STEP 7 -------------------------------------------------------------
 
@@ -64,6 +76,24 @@ public class BatManager : MonoBehaviour
         //      to help you with that distance check :)
         // https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Vector3.html
         //
+
+        for (int i = 0; i < _bats.Length; i++)
+        {
+            BatW6 bat = _bats[i];
+            if (Vector3.Distance(bat.transform.position, _playerTransform.position) <= _interactDistance)
+            {
+                bat.ChasePlayer(_playerTransform.position);
+            } else
+            {
+                bat.StopChase();
+            }
+
+            if (Vector3.Distance(bat.transform.position, _playerTransform.position) <= _overlapDistance)
+            {
+                CreateReactions(bat);
+            }
+        }
+
         // STEP 4
         // Also inside this for loop, if the distance between the bat and the
         //      player is less than _overlapDistance, call CreateReactions()
@@ -84,7 +114,9 @@ public class BatManager : MonoBehaviour
         // https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Random.Range.html
         // If you use floats as the arguments, it will return a float.
         // If you use ints as the arugments, it will return an int.
-        //
+
+        SpawnReactionUI(bat, _messages[UnityEngine.Random.Range(0, _messages.Length)]);
+
         // Use Random.Range() to pick a RANDOM INDEX in the _messages array
         //      and call SpawnReactionUI() with the string at that index.
         // This should choose a random message to spawn every time one of the
@@ -107,7 +139,7 @@ public class BatManager : MonoBehaviour
         // /* starts the comments, and */ ends it.
         // Simply uncomment the below lines by removing the /* and */ to finish.
 
-        /*
+        
         int index = System.Array.IndexOf(_bats, bat);
         
         GridLayoutGroup layout = bat.GetComponentInChildren<GridLayoutGroup>();
@@ -117,7 +149,7 @@ public class BatManager : MonoBehaviour
             TMP_Text textObj = Instantiate(_reactionUiPrefab, layout.transform);
             textObj.text = message;
         }
-        */
+        
 
         // STEP 8 -------------------------------------------------------------
     }
