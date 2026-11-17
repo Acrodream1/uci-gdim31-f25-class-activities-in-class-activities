@@ -61,6 +61,11 @@ Before beginning to make the bat class, some things that I will make sure that t
 2. The methods that the bat class is going to need is the Start() method and the Update() method.
 3. The Start() method should initialize the bat chase and the Update() method should animate the bats.
 
+### W8
+#### In-Class Activity
+
+Devlog Response: The code in step 2 was wrong because the code only took into account the world space and not the relative space. The code only told the muskrat to move forward according to the world space. Instead, the code was supposed to move the muskrat depending on the lookvector of itself instead of the 'lookvector of the world" (Vector3.forward).
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
