@@ -66,6 +66,17 @@ Before beginning to make the bat class, some things that I will make sure that t
 
 Devlog Response: The code in step 2 was wrong because the code only took into account the world space and not the relative space. The code only told the muskrat to move forward according to the world space. Instead, the code was supposed to move the muskrat depending on the lookvector of itself instead of the 'lookvector of the world" (Vector3.forward).
 
+### W9
+#### In-Class Final Report
+
+Google Drawings Link: https://docs.google.com/drawings/d/1lyUvX9xFl_Ke62FUQqgeqB9A1h8SJJEp1YE0m3SWVpc/edit
+
+Changes during class:
+	* Added custom terrain and baked meshes
+	* Edited the katamari object to support a collectibles list and now has ~3 working methods
+	* Added a rigidbody and an animator to the mesh of the player (not the player instance, but the mesh which is a child)
+
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
